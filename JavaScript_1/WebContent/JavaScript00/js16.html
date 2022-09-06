@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function validateEmail()
+	{
+
+		var emailID = document.myForm.EMail.value;//amitku.1990@gmail.com
+		//	01234567890123456789				
+		atpos = emailID.indexOf("@");//11
+		dotpos = emailID.lastIndexOf(".");//17
+		if (atpos < 1 || (dotpos - atpos < 2))
+		{
+			alert("Please enter correct email ID")
+			document.myForm.EMail.focus();
+			return false;
+		}
+		return (true);
+	}
+</script>
+
+</head>
+<body>
+	<form action="success.html" name="myForm"
+		onsubmit="validateEmail()">
+		<table cellspacing="2" cellpadding="2" border="0">
+
+			<tr>
+				<td align="right">EMail</td>
+				<td><input type="text" name="EMail" /></td>
+			</tr>
+
+			<tr>
+				<td align="right"></td>
+				<td><input type="submit" value="Submit" /></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>
